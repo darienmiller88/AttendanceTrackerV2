@@ -37,70 +37,69 @@ web application that exists in the cloud.
 
 ### Why a Desktop App Instead of a Web App?
 
-The original idea for this project was a web application. However, after discussing the workflow and data requirements further, a desktop-first architecture made more sense.
+The original idea for this project was a web application. However, after discussing the workflow and data 
+requirements further, a desktop-first approach made more sense, and satisfied IT security requirements much better.
 
 The biggest reason was data privacy.
 
-Because the application stores student names and attendance records, there were concerns about storing that information in a centralized cloud database, even with proper authentication and security practices in place.
+Because the application stores student names and attendance records, there were concerns about storing that
+information in a centralized cloud database, even with proper authentication and security practices in place.
 
 By moving to a local desktop architecture:
 
-Student data never leaves the user’s machine
-No centralized database exists
-No public-facing backend or API is required
-The application can function completely offline
-Security risk is reduced to the security of the individual workstation
+* Student data never leaves the user’s machine
+* No centralized database exists
+* No public-facing backend or API is required
+* The application can function completely offline
+* Security risk is reduced to the security of the individual workstation
 
-SQLite was chosen specifically because it provides a lightweight, serverless database that works extremely well for local-first applications.
+SQLite was chosen specifically because it provides a lightweight, serverless database that works extremely 
+well for desktop apps.
 
-Why Avalonia?
+### Why Avalonia?
 
-Avalonia was chosen over a traditional web stack because the application is fundamentally a desktop workflow tool.
+Avalonia was chosen over an API or HTMX approach because the application is primarily a desktop workflow tool.
 
 The application relies heavily on:
 
-Data entry forms
-Attendance tables and grids
-Local database access
-File generation and Excel exports
-Offline usage
+* Data entry forms
+* Attendance tables and grids
+* Local database access
+* File generation and Excel exports
+* Offline usage
 
-Avalonia also allows the project to remain entirely within the .NET ecosystem while still supporting cross-platform desktop deployment on Windows, macOS, and Linux.
+Avalonia also allows the project to remain entirely within the .NET ecosystem while still supporting 
+cross-platform desktop deployment on Windows, macOS, and Linux.
 
-Other desktop frameworks were considered, but Avalonia felt like the best fit because it provides:
+I considered other .NET desktop frameworks, but Avalonia felt like the best fit because it provides:
 
-Native desktop-style UI patterns
-Cross-platform support
-XAML-based layouts
-Strong MVVM support
-Easy integration with existing .NET libraries
+* Native desktop-style UI patterns
+* Cross-platform support
+* XAML-based layouts
+* Strong MVVM support
+* Easy integration with existing .NET libraries
 
-This also allows the project to share business logic, database code, and export logic entirely in C# without needing a separate frontend/backend architecture.
+This also allows the project to share business logic, database code, and export logic entirely in C# 
+without needing a separate frontend/backend architecture.
 
-Tech Stack
-Avalonia
-Redis
-.NET
-SQLite
-Docker
-Planned Features
-Student and specialist management
-Attendance tracking
-Class and program scheduling
-Local SQLite persistence
-Excel export generation
-Search and filtering
-Multi-site support
-Offline-first architecture
-Current Status
+# Planned Features
+* Student and specialist management
+* Attendance tracking
+* Class and program scheduling
+* Local SQLite persistence
+* Excel export generation
+* Search and filtering
+* Multi-site support
+* Offline-first architecture
+* Current Status
 
 Version 2.0 is currently focused on rebuilding the application architecture from the ground up with:
 
-Improved database design
-Cleaner separation of concerns
-Proper MVVM structure
-Better scalability for future features
-Cross-platform desktop deployment support
+* Improved database design
+* Cleaner separation of concerns
+* Proper MVVM structure
+* Better scalability for future features
+* Cross-platform desktop deployment support
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
